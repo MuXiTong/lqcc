@@ -1,6 +1,6 @@
-# wttxglxt
+# lqcc
 
-> A Vue.js project
+> 一个物流实名登记系统
 
 ## Build Setup
 
