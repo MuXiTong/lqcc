@@ -593,6 +593,7 @@ export default {
         // 确定选择
         sureSelect(){
             this.isshow = false;
+            // 根据类型来选中
             if( this.curType == "wlgs" ){
                 this.SupplierName = this.pickerSelVal['SupplierName'];
                 this.form.SupplierNO = this.pickerSelVal['SupplierNO'];
