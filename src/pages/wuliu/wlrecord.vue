@@ -69,12 +69,12 @@
                 <!-- <mt-field label="所属警务站" type="text" v-model="form.SSJWZ" ></mt-field> -->
                 <mt-field label="运单号" type="text" v-model="form.YDH" ></mt-field>
                 <mt-field label="寄件人" type="text" v-model="form.JJRXM" ></mt-field>
-                <!-- <div class="lq-part" @click="openPicker('bdate')">
-                    <mt-cell title="开始时间" is-link :value="form.bdate"></mt-cell>
+                <div class="lq-part" @click="openPicker('JJStartTime')">
+                    <mt-cell title="开始时间" is-link :value="form.JJStartTime"></mt-cell>
                 </div>
-                <div class="lq-part" @click="openPicker('edate')">
-                    <mt-cell title="结束时间" is-link :value="form.edate"></mt-cell>
-                </div> -->
+                <div class="lq-part" @click="openPicker('JJEndTime')">
+                    <mt-cell title="结束时间" is-link :value="form.JJEndTime"></mt-cell>
+                </div>
             </div>
             <div class="lq-btn-content">
                 <mt-button type="primary" size="large" @click="submit" >查询</mt-button>
@@ -273,7 +273,7 @@ export default {
             list:[],
             form:{
                 // WLGSID:"",
-                WLGSMC:"",
+                // WLGSMC:"",
                 FHDMC:"",
                 // SSFJ:"",
                 // SSPCS:"",
@@ -283,6 +283,8 @@ export default {
                 SupplierNO:"全部",
                 organidstr:"",
                 PicBatch:"全部",
+                JJStartTime:new Date(new Date()/1-1000*60*60*24*30).Format("yyyy-MM-dd"),
+                JJEndTime:new Date().Format("yyyy-MM-dd"),
             },
             SupplierName:"全部",
             organidstrName:"全部",

@@ -5,7 +5,7 @@
             <div class="wt-logo">
                 <img src="../../assets/logo.png"/>
             </div>
-            <div class="lq-title">物流实名认证系统</div>
+            <!-- <div class="lq-title">物流实名认证系统</div> -->
             <div>
                 <mt-field label="账号" :placeholder="placeholders.username" :state="state.username" v-model="form.username"></mt-field>
                 <mt-field label="密码" :placeholder="placeholders.userpass" :state="state.userpass" type="password" v-model="form.userpass"></mt-field>
@@ -147,16 +147,18 @@
         transform: translate(-50%,-50%);
         border-radius:4px;
         .wt-logo{
-            width: 6rem;
-            height: 6rem;
-            margin: -4rem auto 1rem;
-            background:#fff;
-            border-radius: 50%;
-            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5) inset;
+            // width: 6rem;
+            width: 18rem;
+            max-width:352px;
+            // height: 6rem;
+            margin:0 auto 1rem;
+            // background:#fff;
+            // border-radius: 50%;
+            // box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5) inset;
             img{
                 width: 100%;
                 height: 100%;
-                padding:20%;
+                // padding:20%;
                 box-sizing: border-box;
             }
         }

@@ -23,7 +23,8 @@ import axios from 'axios'
 // axios.defaults.baseURL = 'http://101.200.223.57:5151/Comm/CommonData_Phone';
 // axios.defaults.baseURL = '/wl';
 // 正式环境
-axios.defaults.baseURL = '/Comm/CommonData';
+// axios.defaults.baseURL = '/Comm/CommonData';
+axios.defaults.baseURL = '/Comm/CommonData_Phone';
 
 axios.defaults.headers.post['content-Type'] = 'appliction/x-www-form-urlencoded';
 axios.defaults.transformRequest = [function (data) {
@@ -65,7 +66,6 @@ Vue.config.productionTip = false
 
 
 router.beforeEach(({meta, path}, from, next) => {
-    
     let { auth = true } = meta
     let isLogin = Boolean(store.state.userInfo)
     if (auth && !isLogin && path !== '/login') {
