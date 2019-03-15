@@ -105,7 +105,7 @@
                         setTimeout(() => {
                             suc.close();
                             let userInfo = result.data.Table[0]
-                            this.USER_SIGNIN({userInfo:userInfo});
+                            this.USER_SIGNIN(userInfo);
                             _this.$router.replace({ path: 'home' });
                         }, 1000);
                     }else{

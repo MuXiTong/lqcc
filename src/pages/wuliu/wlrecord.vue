@@ -1,6 +1,6 @@
 <!-- 开单记录 -->
 <template>
-  <div class="contains" :class="{overflowHidden:showsearch || showdetail}">
+  <div class="contains" :class="{overflowHidden:showsearch || showdetail}" style="overflow:hidden;">
         <mt-header :title="'运单记录'+( allList.length > 0 ? '【'+ allList.length + '】' : '' )" fixed>
             <router-link to="/" slot="left">
                 <mt-button icon="back"></mt-button>
@@ -9,7 +9,7 @@
         </mt-header>
         
         <!-- 记录列表页 -->
-        <div class="record-body">
+        <div class="record-body" style="height:100%;overflow:auto;">
             <div class="record-part">
                 <!-- <div class="record-title">
                     <div>{{listBdate}}&emsp;至&emsp;{{listEdate}}</div>
@@ -70,10 +70,10 @@
                 <mt-field label="运单号" type="text" v-model="form.YDH" ></mt-field>
                 <mt-field label="寄件人" type="text" v-model="form.JJRXM" ></mt-field>
                 <div class="lq-part" @click="openPicker('JJStartTime')">
-                    <mt-cell title="开始时间" is-link :value="form.JJStartTime"></mt-cell>
+                    <mt-cell title="寄件时间从" is-link :value="form.JJStartTime"></mt-cell>
                 </div>
                 <div class="lq-part" @click="openPicker('JJEndTime')">
-                    <mt-cell title="结束时间" is-link :value="form.JJEndTime"></mt-cell>
+                    <mt-cell title="到" is-link :value="form.JJEndTime"></mt-cell>
                 </div>
             </div>
             <div class="lq-btn-content">
@@ -283,7 +283,7 @@ export default {
                 SupplierNO:"全部",
                 organidstr:"",
                 PicBatch:"全部",
-                JJStartTime:new Date(new Date()/1-1000*60*60*24*30).Format("yyyy-MM-dd"),
+                JJStartTime:new Date(new Date()/1-1000*60*60*24*2).Format("yyyy-MM-dd"),
                 JJEndTime:new Date().Format("yyyy-MM-dd"),
             },
             SupplierName:"全部",
@@ -445,7 +445,7 @@ export default {
                 let nextlist =  _this.allList.slice(_this.pageSize*(_this.pageNum-1),_this.pageSize*_this.pageNum);
                 _this.list = _this.list.concat(nextlist);
                 _this.loading = false;
-            }, 800);
+            },10);
         },
         // 修改运单
         editUnit(){
@@ -580,7 +580,7 @@ export default {
         // 下拉筛选数据
         filterData(val){
             let _this = this;
-            let data = _this[curType+"Data"];
+            let data = _this[_this.curType+"Data"];
 
             if(data){
                 this.slots[0].values = data.filter(function(item,i){

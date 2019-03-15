@@ -8,7 +8,7 @@ Vue.use(Vuex)
 
 // let user = JSON.parse(sessionStorage.getItem('user')) || {}
 
-let userInfo = JSON.parse(sessionStorage.getItem('userInfo')) || null
+let userInfo = JSON.parse(sessionStorage.getItem('user')) || null
 
 const state = {
     // username:user.username,
